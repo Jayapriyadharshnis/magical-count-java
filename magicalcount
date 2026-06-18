@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        int[][] input3 = new int[input1][input2];
+        System.out.println("Enter elements of array: ");
+
+        for (int i = 0; i < input1; i++) {
+            for (int j = 0; j < input2; j++) {
+                input3[i][j] = sc.nextInt();
+            }
+        }
+
+     
+        int magicalCount = 0;
+       
+        for (int i = 0; i < input1; i++) {
+            int oddSum = 0;
+            for (int j = 0; j < input2; j++) {
+                if (input3[i][j] % 2 != 0) {
+                    oddSum += input3[i][j];
+                }
+            }
+            if (oddSum % 2 == 0) {
+                magicalCount++;
+            }
+        }
+       
+       
+        System.out.println("magical count: " + magicalCount);
+    }
+}
